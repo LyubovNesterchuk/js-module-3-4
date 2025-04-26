@@ -560,6 +560,21 @@
 // console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
 
 
+// Скористаємося передцим створивши новий масив!!!!! 
+// який матиме інше посилання і вже в ньому видалятимеммо
+
+function updateObject(obj, ...rest) {
+    const newObj = {...obj};
+    const keys = Object.keys(obj);
+
+    for (const elem of rest) {
+        delete newObj[elem];
+    }
+    return newObj;
+}
+
+console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
+
 // -------------------------------------------------------------------------------------
 
 // Напишіть функцію, яка прибирає значення, які повторюються
@@ -574,3 +589,7 @@
 //     return newArr;
 // }
 // console.log(filterValues(["arr", 3, 6, 3, "arr", 7, 9]));
+
+
+
+
