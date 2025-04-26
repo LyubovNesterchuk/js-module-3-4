@@ -3,19 +3,17 @@
 // Додайте до кінця масиву елемент 'rock-n-roll' за допомогою відповідного методу масивів
 // Знайдіть елемент 'blues' у масиві та замініть його на 'classic', використовуючи JavaScript-код
 
-// const styles = ["jazz", "blues"];
-// styles.push("rock-n-roll");
-// const blues = styles.indexOf("blues");
-// styles[blues] = "classic";
-// console.log(styles);
-
-// --------------------------------------------------------------------------1.2
-
 // Напишіть функцію logItems(array), яка приймає масив як аргумент
 // і виводить у консоль кожен його елемент у форматі:
 // "<номер елемента> - <значення елемента>".
 // Використайте цикл for для перебору елементів масиву.
 // Нумерація елементів повинна починатися з 1 (а не з 0).
+
+// const styles = ["jazz", "blues"];
+// styles.push("rock-n-roll");
+// const idx = styles.indexOf("blues");
+// styles[idx] = "classic";
+// console.log(styles);
 
 // function logItems(array) {
 //     for (let i = 0; i < array.length; i++) {
@@ -23,7 +21,9 @@
 //     }
 // }
 
-// logItems(["as", "ys", "kl", "yu"]);
+// logItems(styles);
+
+
 
 
 
@@ -44,12 +44,9 @@
 //     } else {
 //         alert("User not found");
 //     }
-      
 // }
 
 // checkLogin(logins);
-
-
 
 
 
@@ -65,12 +62,24 @@
 //                                             // (який містить усі передані в функцію значення)
 //                                             //  у справжній масив, з яким зручно працювати.
 //     const numbers = [];                     // Створюємо новий масив numbers,
-//                                             //  куди додамо тільки числа
-//     for (let i = 0; i < args.length; i++) {
-//         if (typeof args[i] === "number") {
-//             numbers.push(args[i]);
-//         }
-//     }
+                                            //  куди додамо тільки числа
+    
+                                                //  Варіант з typeof гірший, бо не спрацює з NaN, що теж єчислом
+                                                // const nan = NaN;
+                                                // console.log(typeof nan); // number
+    // for (let i = 0; i < args.length; i++) {
+    //     if (typeof args[i] === "number") {
+    //         numbers.push(args[i]);
+    //     }
+    // }
+
+    
+
+        // for (let i = 0; i < args.length; i++) {
+        //     if (!isNaN(args[i])) {
+        //         numbers.push(args[i]);
+        //     }
+        //  }
 
 //     if (numbers.length === 0) {
 //         return 0;
@@ -84,17 +93,16 @@
 //     return sum / numbers.length;
 // }
 
+// console.log(caclculateAverage(1, "fg", 24, 4, 9, "", NaN, 9));
+// console.log(caclculateAverage( "fg",  "", NaN));
 // console.log(caclculateAverage(1, "fg", 24, 4, 9, "", 9));
 // console.log(caclculateAverage( "fg",  ""));
-
 
 
 // ----------------------------------------------------------------------4+
 // Напишіть функцію, яка сумуватиме сусідні числа
 // і пушитиме їх в новий масив.
-
 // const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
-
 // уточнення: складати необхідно перше число з другим, потім друге - з третім,
 // третє - з четвертим і так до кінця.
 // В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
@@ -122,17 +130,23 @@
 // в іншому випадку - поверніть 'Sory, it is not an array!'.
 
 // const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+// const notArray= {a: 2, b: 5}
 
-// function findSmallestNumber(numbers) {
-//     if (Array.isArray(numbers)) {
-//       return  Math.min(...numbers);
+// function findSmallestNumber(arr) {
+//     if (Array.isArray(arr)) {
+//       return  Math.min(...arr);
 //     } else {
 //         return "Sorry, it is not an array!";
 //     }
 
 // }
-// console.log(findSmallestNumber(numbers));
 
+// function findSmallestNumber(arr) {
+//    return Array.isArray(arr) ? Math.min(...arr) : "Sorry, it is not an array!";
+//     }
+
+// console.log(findSmallestNumber(numbers));
+// console.log(findSmallestNumber(notArray));
 
 
 
@@ -141,7 +155,6 @@
 // приймає довільний рядок, що складається лише зі слів, розділених
 // пробілами (параметр string), і повертатиме найдовше слово у реченні.
 
-// Скористайтесь цим прикладом виклику функції для перевірки її роботи:
 
 // function findLongestWord(string) {
 //     const arr = string.split(" ");
@@ -155,45 +168,22 @@
 // }
 
 
-// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
-
-
 // function findLongestWord(string) {
-//     const words = string.split(" ");
-//     let longest = words[0];
+//   const words = string.split(' ');
+//   let longestWord = '';
 
-//     for (let i = 1; i < words.length; i++) {
-//         if (words[i].length > longest.length) {
-//             longest = words[i];
-//         }
+//   for (const word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
 //     }
+//   }
 
-//     return longest;
+//   return longestWord;
 // }
 
-// console.log(findLongestWord("The quick brown fox jumps over the lazy dog"));
-
-// function findLongestWords(string) {
-//     const words = string.split(" ");
-//     let maxLength = 0;
-//     let longestWords = [];
-
-//     for (let i = 0; i < words.length; i++) {
-//         const wordLength = words[i].length;
-
-//         if (wordLength > maxLength) {
-//             maxLength = wordLength;
-//             longestWords = [words[i]]; // нове найдовше слово
-//         } else if (wordLength === maxLength) {
-//             longestWords.push(words[i]); // ще одне слово такої ж довжини
-//         }
-//     }
-
-//     return longestWords;
-// }
-// console.log(findLongestWords("I love watermelon and pineapples"));
-
-
+// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+// console.log(findLongestWord('Я люблю програмувати на JavaScript')); // "програмувати"
+// console.log(findLongestWord('Швидкий білий лис стрибнув через паркан')); // "стрибнув"
 
 // ----------------------------------------------------------------------7
 // Напишіть скрипт, який для об'єкту user, послідовно:
@@ -263,8 +253,9 @@
 // методи sum і mult мають повертати рядок 'No such propeties'
 
 // const calculator = {
-//     x: undefined,
-//     y: undefined,
+//     x: null,
+//     y: null,
+
 
 //     read(a, b) {
 //         this.x = a;
@@ -272,10 +263,10 @@
 //     },
 
 //     exist() {
-//         return this.x !== undefined && this.y !== undefined;
+//         return this.x !== null && this.y !== null;
 //     },
-
-//     sum(a, b) {
+ 
+//     sum() {
 //         if (!this.exist()) {
 //             return "No such properties";
 //         }
@@ -290,7 +281,7 @@
   
 // }
 
-// calculator.read(4, 9);
+// calculator.read(5, 9);
 // console.log(calculator.sum());
 // console.log(calculator.mult());
 
@@ -305,37 +296,37 @@
 // Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою 
 // назвою фрукта, це також треба урахувати.
 
-const fruits = [
-    { name: "Яблуко", price: 45, quantity: 7 },
-    { name: "Апельсин", price: 60, quantity: 4 },
-    { name: "Банан", price: 125, quantity: 8 },
-    { name: "Груша", price: 350, quantity: 2 },
-    { name: "Виноград", price: 440, quantity: 3 },
-    { name: "Банан", price: 125, quantity: 3 },
-  ];
+// const fruits = [
+//     { name: "Яблуко", price: 45, quantity: 7 },
+//     { name: "Апельсин", price: 60, quantity: 4 },
+//     { name: "Банан", price: 125, quantity: 8 },
+//     { name: "Груша", price: 350, quantity: 2 },
+//     { name: "Виноград", price: 440, quantity: 3 },
+//     { name: "Банан", price: 125, quantity: 3 },
+//   ];
 
-function calcTotalPrice(fruits, fruitName) {
-    let totalPrice = 0;
-    let totalQuantity = 0;
-    for (const item of fruits) {
-        if (item.name === fruitName) {
-            totalQuantity +=item.quantity;
-            totalPrice += item.price * item.quantity;;
-        } 
+// function calcTotalPrice(fruits, fruitName) {
+//     let totalPrice = 0;
+//     let totalQuantity = 0;
+//     for (const item of fruits) {
+//         if (item.name === fruitName) {
+//             totalQuantity +=item.quantity;
+//             totalPrice += item.price * item.quantity;;
+//         } 
                
-    }
+//     }
 
-      if (totalQuantity === 0) {
-        return `Фрукта "${fruitName}" не знайдено на складі.`;
-    }
+//       if (totalQuantity === 0) {
+//         return `Фрукта "${fruitName}" не знайдено на складі.`;
+//     }
 
-    return `На складі ${totalQuantity} кілограм(и) ${fruitName},
-    загальна вартість яких складає ${totalPrice} гривень`
-}
+//     return `На складі ${totalQuantity} кілограм(и) ${fruitName},
+//     загальна вартість яких складає ${totalPrice} гривень`
+// }
   
-console.log(calcTotalPrice(fruits, "Банан"));
-console.log(calcTotalPrice(fruits, "Апельсин"));
-console.log(calcTotalPrice(fruits, "Абрикос"));
+// console.log(calcTotalPrice(fruits, "Банан"));
+// console.log(calcTotalPrice(fruits, "Апельсин"));
+// console.log(calcTotalPrice(fruits, "Абрикос"));
 
 
 
