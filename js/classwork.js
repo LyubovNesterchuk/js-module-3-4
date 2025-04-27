@@ -560,20 +560,20 @@
 // console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
 
 
-// Скористаємося передцим створивши новий масив!!!!! 
+// Скористаємося delete перед цим створивши новий обєкт!!!!!
 // який матиме інше посилання і вже в ньому видалятимеммо
 
-function updateObject(obj, ...rest) {
-    const newObj = {...obj};
-    const keys = Object.keys(obj);
+// function updateObject(obj, ...rest) {
+//     const newObj = {...obj};
+//     const keys = Object.keys(obj);
 
-    for (const elem of rest) {
-        delete newObj[elem];
-    }
-    return newObj;
-}
+//     for (const elem of rest) {
+//         delete newObj[elem];
+//     }
+//     return newObj;
+// }
 
-console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
+// console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
 
 // -------------------------------------------------------------------------------------
 
@@ -591,5 +591,81 @@ console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
 // console.log(filterValues(["arr", 3, 6, 3, "arr", 7, 9]));
 
 
+// ------------------------------------------------------------------------------------
+
+// function fillArray(min, max) {
+//     let arr = [];
+//     for (let i = min; i <= max; i += 2) {
+//       return arr.push(i)
+//     }
+// }
+// console.log(fillArray(2, 10));
+// поверне 1, тобто довжину масиву, бо відразу вийде з циклу через return всередині циклу
+
+
+
+
+// --------------------------------------------------------------------------------------------------
+
+// function fillArray(min, max) {
+//     let arr = [];
+//     for (let i = min; i <= max; i += 2) {
+//         arr.push(i);
+//     }
+//     return arr;
+// }
+
+// console.log(fillArray(2, 10)); // [2, 4, 6, 8, 10]
+
+
+
+// -----------------------------------------------------------------------------------------------
+
+// const password = 'true';
+// const myKey = password;
+// const obj = {
+//   [myKey]: false,
+// };
+// console.log(obj);
+
+
+// ----------------------------------------------------------------------------------------------
+
+// const fruits = ['banana', 'apple', 'orange', 'watermelon',
+// 'apple', 'orange', 'grape', 'apple'];
+// fruits.length = 0;
+// console.log(fruits); // поверне []
+
+
+// -------------------------------------------------------------------------------------------
+
+// const fruits = ['apple', 'banana', 'orange'];
+// const meat = ['poultry', 'beef', 'fish'];
+// const vegetables = ['potato', 'tomato', 'cucumber'];
+// const food = [...fruits, ...meat, ...vegetables];
+// console.log(food); // поверне ["apple", "banana", "orange",
+// "poultry", "beef", "fish", "potato", "tomato", "cucumber"]
+
+
+
+// -----------------------------------------------------------------------------------
+
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+// };
+// const userKeys = Object.keys(user);
+// for (const key of userKeys) {
+//    isAdult(age)user[key]);
+//  }
+
+
+// -------------------------------------------------------------------------------------
+
+//  function isAdult(age) {
+//   return age >= 18;
+// }
+// console.log(isAdult(40));
 
 
