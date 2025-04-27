@@ -4,14 +4,16 @@
 // foo(1, 2, 3);
 // foo(4, 5, 6, 7, 8, 9, 0);
 
-// function foo() {
 
+
+// function foo() {
 //     const arr = [1, 2, 3];
 //     console.log(Array.isArray(arr));
 //     console.log(Array.isArray(arguments));
 // };
 // foo(1, 2, 3);
 // foo(4, 5, 6, 7, 8, 9, 0);
+
 
 
 // function foo() {
@@ -21,11 +23,15 @@
 // foo(1, 2, 3);
 // foo(4, 5, 6, 7, 8, 9, 0);
 
+
+
 // function foo() {
 //     console.log(arguments[1]);
 // };
 // foo(1, 2, 3);
 // foo(4, 5, 6, 7, 8, 9, 0);
+
+
 
 // function foo() {
 //     const args = Array.from(arguments);
@@ -36,11 +42,17 @@
 // foo(1, 2, 3);
 // foo(4, 5, 6, 7, 8, 9, 0);
 
+
+
 // const add = function () {
 //     console.log(arguments);
 // };
 // console.log(add(1, 2, 3));
 // console.log(add(4, 5, 6, 7, 8, 9, 0));
+
+
+
+// -------------------------------------------------------------------------------------------
 
 // const add = function () {
 //     const args = Array.from(arguments);
@@ -53,6 +65,9 @@
 // console.log(add(1, 2, 3));
 // console.log(add(4, 5, 6, 7, 8, 9, 0));
 
+
+// -----------------------------------------------------------------------------
+
 // const calAverage = function () {
 //     let total = 0;
 //     for (let item of arguments) {
@@ -63,6 +78,9 @@
 // console.log(calAverage(1, 2, 3));
 // console.log(calAverage(4, 5, 6, 7, 8, 9, 0));
 
+
+
+//--------------------------------------------------------------------------------
 
 // function logItems(items) {
 
@@ -173,6 +191,7 @@
 
 // friends[0] = "Petya + " + friends[0];
 // console.log(friends);
+
 
 // ------------------------------------------------------------------------
 
@@ -510,85 +529,7 @@
 
 // console.log(account);
 
-// -----------------------------------------------------------------------------
 
-// function checkArrays(firstArray, secondArray) {
-//     if (firstArray.length !== secondArray.length) {
-//         return false;
-//     }
-
-//     for (let i = 0; i < firstArray.length; i++){
-//         if (firstArray[i] !== secondArray[i]) {
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-// console.log(checkArrays([1, 2 , 4], [1, 2, 4]));
-// console.log(checkArrays(["fg", "io"], ["gf", "io"]));
-// console.log(checkArrays(["fg","io"], ["fg","io", "gf", "io"]));
-
-// ---------------------------------------------------------------------------
-
-// const arrayNumbers = [11, 9, 5, 4, 1];
-// function updateArray(arr) {
-//     const newArray = [];
-//     for (let i = arr.length - 1; i >= 0; i--){
-//         newArray.push(arr[i]);
-//     }
-//     return newArray;
-// }
-// console.log(updateArray(arrayNumbers));
-
-
-
-// ------------------------------------------------------------------------------------
-// Функція приймає обєкт і повертає новий без вказаних параметрів
-
-// function updateObject(obj, ...rest) {
-//     const newObj = {};
-//     const keys = Object.keys(obj);
-
-//     for (const key of keys) {
-//         if (!rest.includes(key)) {
-//             newObj[key] = obj[key];
-//         }
-//     }
-//     return newObj;
-// }
-
-// console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
-
-
-// Скористаємося delete перед цим створивши новий обєкт!!!!!
-// який матиме інше посилання і вже в ньому видалятимеммо
-
-// function updateObject(obj, ...rest) {
-//     const newObj = {...obj};
-//     const keys = Object.keys(obj);
-
-//     for (const elem of rest) {
-//         delete newObj[elem];
-//     }
-//     return newObj;
-// }
-
-// console.log(updateObject({a:1, b:3, c:5}, "a", "b"));
-
-// -------------------------------------------------------------------------------------
-
-// Напишіть функцію, яка прибирає значення, які повторюються
-
-// function filterValues(arr) {
-//     const newArr = [];
-//     for (const elem of arr) {
-//         if (!newArr.includes(elem)) {
-//             newArr.push(elem);
-//         }
-//     }
-//     return newArr;
-// }
-// console.log(filterValues(["arr", 3, 6, 3, "arr", 7, 9]));
 
 
 // ------------------------------------------------------------------------------------
